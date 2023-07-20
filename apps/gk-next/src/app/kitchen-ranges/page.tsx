@@ -20,6 +20,8 @@ const content: KitchenRangeContentProps = {
     your new project. Whether you’re looking for a traditional shaker kitchen, a
     modern kitchen, or a handleless kitchen, we’ve got plenty of styles to suit
     your personality.`,
+    showViewAllKitchens: false,
+    showKitchenCategories: false,
     filters: [
         {
             id: 'type',

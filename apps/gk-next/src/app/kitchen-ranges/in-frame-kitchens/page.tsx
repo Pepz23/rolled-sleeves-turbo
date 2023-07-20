@@ -22,15 +22,6 @@ const content: KitchenRangeContentProps = {
     inspiration by browsing some of our in-frame kitchens.`,
     filters: [
         {
-            id: 'type',
-            name: 'Kitchen Type',
-            options: [
-                { value: 'Modern', label: 'Modern' },
-                { value: 'Traditional', label: 'Traditional' },
-                { value: 'Handleless', label: 'Handleless' },
-            ],
-        },
-        {
             id: 'priceGroup',
             name: 'Price Group',
             options: [

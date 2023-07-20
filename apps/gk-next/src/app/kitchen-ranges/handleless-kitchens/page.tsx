@@ -21,15 +21,6 @@ const content: KitchenRangeContentProps = {
     idea of how your new space could look with the help of our designers.`,
     filters: [
         {
-            id: 'type',
-            name: 'Kitchen Type',
-            options: [
-                { value: 'Modern', label: 'Modern' },
-                { value: 'Traditional', label: 'Traditional' },
-                { value: 'In-Frame', label: 'In-Frame' },
-            ],
-        },
-        {
             id: 'priceGroup',
             name: 'Price Group',
             options: [

@@ -23,15 +23,6 @@ const content: KitchenRangeContentProps = {
     that is beautiful and functional.`,
     filters: [
         {
-            id: 'type',
-            name: 'Kitchen Type',
-            options: [
-                { value: 'Modern', label: 'Modern' },
-                { value: 'Handleless', label: 'Handleless' },
-                { value: 'In-Frame', label: 'In-Frame' },
-            ],
-        },
-        {
             id: 'priceGroup',
             name: 'Price Group',
             options: [

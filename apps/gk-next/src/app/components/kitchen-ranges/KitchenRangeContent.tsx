@@ -1,6 +1,7 @@
 'use client'
 
 import { Fragment, useMemo, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Dialog, Disclosure, Transition } from '@headlessui/react'
@@ -10,13 +11,15 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { classNames } from 'utils/tailwind/classNames'
 import { useKitchens } from 'stores/kitchen'
-import { Button } from 'components/button/Button'
+import { Button, ButtonLink } from 'components/button/Button'
 import { removeDuplicates } from 'utils/general/removeDuplicates'
 
 export type KitchenRangeContentProps = {
     type: 'Modern' | 'Traditional' | 'Handleless' | 'In-Frame' | 'All'
     title: string
     description: string
+    showViewAllKitchens?: boolean
+    showKitchenCategories?: boolean
     filters: {
         id: string
         name: string
@@ -28,13 +31,21 @@ export type KitchenRangeContentProps = {
 }
 
 export default function KitchenRangeContent(props: KitchenRangeContentProps) {
-    const { type, title, description, filters } = props
+    const {
+        type,
+        title,
+        description,
+        showKitchenCategories = true,
+        showViewAllKitchens = true,
+        filters,
+    } = props
 
     const [currentRefinements, setCurrentRefinements] = useState({
         type: [],
         priceGroup: [],
     })
 
+    const pathname = usePathname()
     const { getFilteredKitchens, getKitchensByType } = useKitchens()
     const kitchens = getFilteredKitchens(type, currentRefinements)
     const allKitchens = getKitchensByType(type)
@@ -228,6 +239,11 @@ export default function KitchenRangeContent(props: KitchenRangeContentProps) {
                     <div className="pb-10 border-b border-gray-200 pt-lg">
                         <h1 className="text-4xl tracking-tight text-gray-900">{title}</h1>
                         <p className="mt-4 text-base text-gray-500">{description}</p>
+                        {showViewAllKitchens && (
+                            <ButtonLink href="/kitchen-ranges" className="mt-4">
+                                View All Kitchens
+                            </ButtonLink>
+                        )}
                     </div>
                     <div className="pt-sm pb-sm lg:pb-lg lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
                         <aside>
@@ -245,10 +261,58 @@ export default function KitchenRangeContent(props: KitchenRangeContentProps) {
                             </button>
                             <div className="hidden lg:block">
                                 <form className="space-y-10 divide-y divide-gray-200">
+                                    {showKitchenCategories && (
+                                        <ul className="space-y-2 text-sm">
+                                            {!pathname.includes('modern') && (
+                                                <li>
+                                                    <a
+                                                        href="/kitchen-ranges/modern-kitchens"
+                                                        className="font-bold text-brand-primary hover:underline"
+                                                    >
+                                                        Modern Kitchens
+                                                    </a>
+                                                </li>
+                                            )}
+                                            {!pathname.includes('traditional') && (
+                                                <li>
+                                                    <a
+                                                        href="/kitchen-ranges/traditional-kitchens"
+                                                        className="font-bold text-brand-primary hover:underline"
+                                                    >
+                                                        Traditional Kitchens
+                                                    </a>
+                                                </li>
+                                            )}
+                                            {!pathname.includes('handleless') && (
+                                                <li>
+                                                    <a
+                                                        href="/kitchen-ranges/handleless-kitchens"
+                                                        className="font-bold text-brand-primary hover:underline"
+                                                    >
+                                                        Handleless Kitchens
+                                                    </a>
+                                                </li>
+                                            )}
+                                            {!pathname.includes('in-frame') && (
+                                                <li>
+                                                    <a
+                                                        href="/kitchen-ranges/in-frame-kitchens"
+                                                        className="font-bold text-brand-primary hover:underline"
+                                                    >
+                                                        In-Frame Kitchens
+                                                    </a>
+                                                </li>
+                                            )}
+                                        </ul>
+                                    )}
                                     {filters.map((section, sectionIdx) => (
                                         <div
                                             key={section.name}
-                                            className={sectionIdx === 0 ? null : 'pt-10'}
+                                            className={
+                                                sectionIdx === 0 && !showKitchenCategories
+                                                    ? null
+                                                    : 'pt-10'
+                                            }
                                         >
                                             <fieldset>
                                                 <legend className="block text-sm font-medium text-gray-900">
