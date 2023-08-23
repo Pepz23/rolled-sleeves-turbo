@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Button } from 'components/button/Button'
-import { Input } from 'components/input/Input'
+import { Input, Select } from 'components/input/Input'
 
 export default function BrochureForm() {
     const pdfRef = useRef(null)
@@ -17,7 +17,7 @@ export default function BrochureForm() {
         })
 
         if (res) {
-            reset({ email: '', firstName: '', lastName: '' })
+            reset({ email: '', firstName: '', lastName: '', heardOfUsVia: '' })
 
             pdfRef.current.click()
         }
@@ -54,6 +54,19 @@ export default function BrochureForm() {
                     required
                     {...register('lastName', { required: true })}
                 />
+            </div>
+            <div>
+                <Select label="Where did you hear about us?" {...register('heardOfUsVia')}>
+                    <option defaultChecked value="n/a">
+                        Please select...
+                    </option>
+                    <option value="google">Google (Search Engine)</option>
+                    <option value="social-media">Social Media (Facebook, Instagram, etc)</option>
+                    <option value="referral">Referral / Word of Mouth</option>
+                    <option value="walk-in">Walk In / Showroom</option>
+                    <option value="second-nature">Second Nature</option>
+                    <option value="other">Other</option>
+                </Select>
             </div>
             <div className="flex w-full mt-4">
                 <Button type="submit" className="w-full">

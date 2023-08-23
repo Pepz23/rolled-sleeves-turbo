@@ -1,6 +1,11 @@
 'use client'
 
-import { forwardRef, InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
+import {
+    forwardRef,
+    InputHTMLAttributes,
+    SelectHTMLAttributes,
+    TextareaHTMLAttributes,
+} from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
@@ -8,6 +13,10 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 }
 
 type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+    label: string
+}
+
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
     label: string
 }
 
@@ -23,7 +32,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         <>
             {label && (
                 <label htmlFor={restProps?.name || restProps?.id} className={labelClasses}>
-                    {label} {required && <span className="text-red-500">*</span>}
+                    {label}{' '}
+                    {required ? (
+                        <span className="text-red-500">*</span>
+                    ) : (
+                        <span className="text-xs text-gray-400">- optional</span>
+                    )}
                 </label>
             )}
             <input ref={ref} className={twMerge(inputClasses, className)} {...restProps} />
@@ -38,7 +52,12 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, r
         <>
             {label && (
                 <label htmlFor={restProps?.name || restProps?.id} className={labelClasses}>
-                    {label} {required && <span className="text-red-500">*</span>}
+                    {label}{' '}
+                    {required ? (
+                        <span className="text-red-500">*</span>
+                    ) : (
+                        <span className="text-xs text-gray-400">- optional</span>
+                    )}
                 </label>
             )}
             <textarea ref={ref} className={twMerge(inputClasses, className)} {...restProps} />
@@ -46,5 +65,26 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>((props, r
     )
 })
 
+export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
+    const { label, required, className = '', ...restProps } = props
+
+    return (
+        <>
+            {label && (
+                <label htmlFor={restProps?.name || restProps?.id} className={labelClasses}>
+                    {label}{' '}
+                    {required ? (
+                        <span className="text-red-500">*</span>
+                    ) : (
+                        <span className="text-xs text-gray-400">- optional</span>
+                    )}
+                </label>
+            )}
+            <select ref={ref} className={twMerge(inputClasses, className)} {...restProps} />
+        </>
+    )
+})
+
 Input.displayName = 'Input'
 Textarea.displayName = 'Textarea'
+Select.displayName = 'Select'
