@@ -297,6 +297,12 @@ export default function Page() {
                         <Image
                             width="96"
                             height="36"
+                            src="/assets/home/brand-logos/asko_allwhite.png"
+                            alt="Asko"
+                        />
+                        <Image
+                            width="96"
+                            height="36"
                             src="/assets/home/brand-logos/Blum-v2.png"
                             alt="Blum"
                         />
@@ -305,12 +311,6 @@ export default function Page() {
                             height="36"
                             src="/assets/home/brand-logos/Bora-v2.png"
                             alt="BORA"
-                        />
-                        <Image
-                            width="96"
-                            height="36"
-                            src="/assets/home/brand-logos/Bosh-v2.png"
-                            alt="Bosch"
                         />
                         <Image
                             width="96"

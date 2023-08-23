@@ -41,7 +41,7 @@ export default async function Page() {
                     />
                 }
                 image="/assets/book-a-free-survey/Video Thumbnail.jpg"
-                videoId="HA5LpO5XcyA"
+                videoId="sZ6E7QqROFk"
                 channel="youtube"
                 className="bg-brand-greyBg"
             />
