@@ -65,12 +65,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             lang="en"
             className={`${montserrat.variable} ${raleway.variable} ${alegreya.variable} ${sourceserif4.variable}`}
         >
-            <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-0H8S67J6VR"
-                strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-0H8S67J6VR');`}
+            <Script id="google-tag-manager" strategy="afterInteractive">
+                {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','GTM-W3RWGWK4');`}
             </Script>
             <Script id="microsoft-analytics" strategy="afterInteractive">
                 {`(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"142002251", enableAutoSpaTracking: true};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");`}
@@ -93,6 +93,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ModalVideo />
                 <CookieBanner />
                 <FacebookPixel />
+                <noscript>
+                    <iframe
+                        src="https://www.googletagmanager.com/ns.html?id=GTM-W3RWGWK4"
+                        height="0"
+                        width="0"
+                        style={{ display: 'none', visibility: 'hidden' }}
+                    ></iframe>
+                </noscript>
             </body>
         </html>
     )
