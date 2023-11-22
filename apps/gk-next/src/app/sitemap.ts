@@ -1,10 +1,16 @@
-import { getAllKitchens, getAllPosts, getAllProjects } from 'utils/contentful/client'
+import { getAllKitchens, getAllPages, getAllPosts, getAllProjects } from 'utils/contentful/client'
 
 export default async function sitemap() {
     const allPosts = await getAllPosts()
     const posts = allPosts.map((post) => ({
         url: `https://www.garrettkitchens.co.uk/blog/${post.fields.slug}`,
         lastModified: post.sys.updatedAt,
+    }))
+
+    const allPages = await getAllPages()
+    const pages = allPages.map((page) => ({
+        url: `https://www.garrettkitchens.co.uk/${page.fields.slug}`,
+        lastModified: page.sys.updatedAt,
     }))
 
     const allKitchens = await getAllKitchens()
@@ -48,5 +54,5 @@ export default async function sitemap() {
         lastModified: new Date().toISOString(),
     }))
 
-    return [...routes, ...posts, ...kitchens, ...projects]
+    return [...routes, ...posts, ...pages, ...kitchens, ...projects]
 }
