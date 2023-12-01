@@ -9,6 +9,14 @@ export async function generateMetadata({ params }) {
     return {
         title: `${page.fields.title} | Garrett Kitchens`,
         description: page.fields.shortText,
+        robots: {
+            index: page.fields.shouldGoogleIndex,
+            follow: page.fields.shouldGoogleIndex,
+            googleBot: {
+                index: page.fields.shouldGoogleIndex,
+                follow: page.fields.shouldGoogleIndex,
+            },
+        },
     }
 }
 
