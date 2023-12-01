@@ -6,6 +6,15 @@ import { getAllKitchens } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'In-Frame Kitchens | Garrett Kitchens',
+    description: `Traditional in-frame kitchens create unique, lasting spaces that use classic
+    joinery techniques for stunning, bold, and durable kitchens. Get some
+    inspiration by browsing some of our in-frame kitchens.`,
+    openGraph: {
+        title: 'In-Frame Kitchens | Garrett Kitchens',
+        description: `Traditional in-frame kitchens create unique, lasting spaces that use classic
+        joinery techniques for stunning, bold, and durable kitchens. Get some
+        inspiration by browsing some of our in-frame kitchens.`,
+    },
 }
 
 const breadcrumbs = [

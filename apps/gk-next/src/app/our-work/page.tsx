@@ -6,6 +6,13 @@ import { getAllProjects } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'Our Work | Garrett Kitchens',
+    description:
+        'Take a look at some of our recent work which we hope will help give you some ideas includes a range of projects such as handleless kitchen installations, traditional kitchen designs and of course modern kitchens.',
+    openGraph: {
+        title: 'Our Work | Garrett Kitchens',
+        description:
+            'Take a look at some of our recent work which we hope will help give you some ideas includes a range of projects such as handleless kitchen installations, traditional kitchen designs and of course modern kitchens.',
+    },
 }
 
 const breadcrumbs = [

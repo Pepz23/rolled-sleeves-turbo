@@ -5,6 +5,11 @@ import { getAllPosts } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'Blog | Garrett Kitchens',
+    description: 'Learn more about our kitchens, our process, and our company.',
+    openGraph: {
+        title: 'Blog | Garrett Kitchens',
+        description: 'Learn more about our kitchens, our process, and our company.',
+    },
 }
 
 const breadcrumbs = [

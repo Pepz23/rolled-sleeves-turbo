@@ -6,6 +6,13 @@ import { getAllKitchens } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'Handleless Kitchens | Garrett Kitchens',
+    description: `Browse our range of handleless kitchens for some inspiration and get an
+    idea of how your new space could look with the help of our designers.`,
+    openGraph: {
+        title: 'Handleless Kitchens | Garrett Kitchens',
+        description: `Browse our range of handleless kitchens for some inspiration and get an
+        idea of how your new space could look with the help of our designers.`,
+    },
 }
 
 const breadcrumbs = [

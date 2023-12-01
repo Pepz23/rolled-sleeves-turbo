@@ -1,3 +1,4 @@
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import KitchenContent from 'components/kitchen-ranges/KitchenContent'
 import KitchenStoreInitializer from 'components/util/KitchenStoreInitializer'
@@ -8,7 +9,19 @@ export async function generateMetadata({ params }) {
 
     return {
         title: `${kitchen.fields.name} | Garrett Kitchens`,
-        description: kitchen.fields.shortDescription,
+        description: documentToPlainTextString(kitchen.fields.shortDescription as any),
+        openGraph: {
+            title: `${kitchen.fields.name} | Garrett Kitchens`,
+            description: documentToPlainTextString(kitchen.fields.shortDescription as any),
+            images: [
+                {
+                    url: kitchen.fields.images?.[0]?.fields?.file?.url,
+                    width: kitchen.fields.images?.[0]?.fields?.file?.details?.image?.width,
+                    height: kitchen.fields.images?.[0]?.fields?.file?.details?.image?.height,
+                    alt: kitchen.fields.images?.[0]?.fields?.description,
+                },
+            ],
+        },
     }
 }
 

@@ -1,12 +1,16 @@
+export const metadata = {
+    title: 'Privacy Policy – How we use your data | Garrett Kitchens',
+}
+
 export default function Page() {
     return (
         <>
-            <section className="container py-lg mx-auto px-4 xl:px-8 lg:max-w-7xl">
-                <h1 className="text-5xl mb-6">Privacy Policy</h1>
+            <section className="container px-4 mx-auto py-lg xl:px-8 lg:max-w-7xl">
+                <h1 className="mb-6 text-5xl">Privacy Policy</h1>
 
-                <hr className="border-b-2 border-brand-primaryHover w-20" />
+                <hr className="w-20 border-b-2 border-brand-primaryHover" />
 
-                <p className="text-lg font-bold mt-6 mb-2">Background</p>
+                <p className="mt-6 mb-2 text-lg font-bold">Background</p>
 
                 <p>
                     Garrett Kitchens understands that your privacy is important to you and that you
@@ -28,19 +32,19 @@ export default function Page() {
                     Policy, you must stop using Our Site immediately.
                 </p>
 
-                <ol className="list-decimal list-inside mt-6">
-                    <li className="text-lg font-bold mb-2">Definitions and Interpretations</li>
+                <ol className="mt-6 list-decimal list-inside">
+                    <li className="mb-2 text-lg font-bold">Definitions and Interpretations</li>
 
                     <p>In this Policy, the following terms shall have the following meanings:</p>
 
-                    <p className="text-lg font-bold mt-3">&quot;Account&quot;</p>
+                    <p className="mt-3 text-lg font-bold">&quot;Account&quot;</p>
 
                     <p>
                         means an account required to access and/or use certain areas and features of
                         Our Site.
                     </p>
 
-                    <p className="text-lg font-bold mt-3">&quot;Cookie&quot;</p>
+                    <p className="mt-3 text-lg font-bold">&quot;Cookie&quot;</p>
 
                     <p>
                         means a small text file placed on your computer or device by Our Site when
@@ -49,14 +53,14 @@ export default function Page() {
                         below.
                     </p>
 
-                    <p className="text-lg font-bold mt-3">&quot;Cookie Law&quot;</p>
+                    <p className="mt-3 text-lg font-bold">&quot;Cookie Law&quot;</p>
 
                     <p>
                         means the relevant parts of the Privacy and Electronic Communications (EC
                         Directive) Regulations 2003.
                     </p>
 
-                    <p className="text-lg font-bold mt-3">&quot;Personal data&quot;</p>
+                    <p className="mt-3 text-lg font-bold">&quot;Personal data&quot;</p>
 
                     <p>
                         means any and all data that relates to an identifiable person who can be
@@ -67,7 +71,7 @@ export default function Page() {
                         (“GDPR”), and
                     </p>
 
-                    <p className="text-lg font-bold mt-3">&quot;We/Us/Our&quot;</p>
+                    <p className="mt-3 text-lg font-bold">&quot;We/Us/Our&quot;</p>
 
                     <p>
                         means Garrett Appliances Limited t/as Garrett Kitchens, a limited company
@@ -75,11 +79,11 @@ export default function Page() {
                         Centre, 57A Croydon Road, Croydon, CR0 4WQ.
                     </p>
 
-                    <li className="text-lg font-bold mb-2 mt-6">
+                    <li className="mt-6 mb-2 text-lg font-bold">
                         &quot;Information About Us&quot;
                     </li>
 
-                    <ol className="list-inside space-y-2">
+                    <ol className="space-y-2 list-inside">
                         <li>
                             2.1 Our Site is owned and operated by Garrett Appliances Limited, a
                             limited company registered in England under company number 08585642, of
@@ -93,7 +97,7 @@ export default function Page() {
                         </li>
                     </ol>
 
-                    <li className="text-lg font-bold mb-2 mt-6">What Does This Policy Cover?</li>
+                    <li className="mt-6 mb-2 text-lg font-bold">What Does This Policy Cover?</li>
 
                     <p>
                         This Privacy Policy applies only to your use of Our Site. Our Site may
@@ -103,8 +107,8 @@ export default function Page() {
                         data to them.
                     </p>
 
-                    <li className="text-lg font-bold mb-2 mt-6">Your Rights</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">Your Rights</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             4.1 As a data subject, you have the following rights under the GDPR,
                             which this Policy and Our use of personal data have been designed to
@@ -165,14 +169,14 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">What Data Do We collect?</li>
+                    <li className="mt-6 mb-2 text-lg font-bold">What Data Do We collect?</li>
 
                     <p className="mb-4">
                         Depending upon your use of Our Site, or associated services, We may collect
                         some or all of the following personal and non-personal data
                     </p>
 
-                    <div className="space-y-2 px-2">
+                    <div className="px-2 space-y-2">
                         <p>5.1 name</p>
 
                         <p>5.2 gender</p>
@@ -200,8 +204,8 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">How Do We Use Your Data?</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">How Do We Use Your Data?</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             6.1 All personal data is processed and stored securely, for no longer
                             than is necessary in light of the reason(s) for which it was first
@@ -287,10 +291,10 @@ export default function Page() {
                             period and only until such time as consent is withdrawn by you.
                         </p>
                     </div>
-                    <li className="text-lg font-bold mb-2 mt-6">
+                    <li className="mt-6 mb-2 text-lg font-bold">
                         How and Where Do We Store Your Data?
                     </li>
-                    <div className="space-y-2 px-2">
+                    <div className="px-2 space-y-2">
                         <p>
                             7.1 We only keep your personal data for as long as We need to in order
                             to use it as described above in section 6, and/or for as long as We have
@@ -331,8 +335,8 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">Do We Share Your Data?</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">Do We Share Your Data?</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             8.1 We may share your data with other companies in Our group in order to
                             facilitate processing of orders.
@@ -379,10 +383,10 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">
+                    <li className="mt-6 mb-2 text-lg font-bold">
                         What Happens If Our Business Changes Hands?
                     </li>
-                    <div className="space-y-2 px-2">
+                    <div className="px-2 space-y-2">
                         <p>
                             9.1 We may, from time to time, expand or reduce Our business and this
                             may involve the sale and/or the transfer of control of all or part of
@@ -402,9 +406,9 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">How Can You Control Your Data?</li>
+                    <li className="mt-6 mb-2 text-lg font-bold">How Can You Control Your Data?</li>
 
-                    <div className="space-y-2 px-2">
+                    <div className="px-2 space-y-2">
                         <p>
                             10.1 In addition to your rights under the GDPR, set out in section 4,
                             when you submit personal data via Our Site, you may be given options to
@@ -427,10 +431,10 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">
+                    <li className="mt-6 mb-2 text-lg font-bold">
                         Your Right to Withhold Information
                     </li>
-                    <div className="space-y-2 px-2">
+                    <div className="px-2 space-y-2">
                         <p>
                             You may access certain areas of Our Site without providing any data at
                             all. However, to use all features and functions available on Our Site
@@ -439,8 +443,8 @@ export default function Page() {
                         </p>
                     </div>
 
-                    <li className="text-lg font-bold mb-2 mt-6">How Can You Access Your Data?</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">How Can You Access Your Data?</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             You have the right to ask for a copy of your personal data held by Us
                             (where such data is held and is not exempt for disclosure). Under the
@@ -455,8 +459,8 @@ export default function Page() {
                             Croydon, CR0 4WQ.
                         </p>
                     </div>
-                    <li className="text-lg font-bold mb-2 mt-6">Our Use of Cookies</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">Our Use of Cookies</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             13.1 Our Site may place and access certain first party Cookies on your
                             computer or device. First party Cookies are those placed directly by Us
@@ -502,8 +506,8 @@ export default function Page() {
                             privacy is not at risk by allowing them.
                         </p>
                     </div>
-                    <li className="text-lg font-bold mb-2 mt-6">Contacting Us</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">Contacting Us</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             If you have any questions about Our Site or this Privacy Policy, please
                             contact Us by post at Unit 2 iO Trade Centre, 57A Croydon Road, Croydon,
@@ -512,8 +516,8 @@ export default function Page() {
                             section 12, above).
                         </p>
                     </div>
-                    <li className="text-lg font-bold mb-2 mt-6">Changes to Our Privacy Policy</li>
-                    <div className="space-y-2 px-2">
+                    <li className="mt-6 mb-2 text-lg font-bold">Changes to Our Privacy Policy</li>
+                    <div className="px-2 space-y-2">
                         <p>
                             We may change this Privacy Policy from time to time (for example, if the
                             law changes). Any changes will be immediately posted on Our Site and you

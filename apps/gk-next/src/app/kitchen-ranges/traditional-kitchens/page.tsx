@@ -6,6 +6,17 @@ import { getAllKitchens } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'Traditional Kitchens | Garrett Kitchens',
+    description: `Our traditional kitchen ranges feature the classic shaker door in smooth
+    and woodgrained finishes. With our experienced designers, we’ll be able to
+    find the right range to match your personality and create a unique kitchen
+    that is beautiful and functional.`,
+    openGraph: {
+        title: 'Traditional Kitchens | Garrett Kitchens',
+        description: `Our traditional kitchen ranges feature the classic shaker door in smooth
+        and woodgrained finishes. With our experienced designers, we’ll be able to
+        find the right range to match your personality and create a unique kitchen
+        that is beautiful and functional.`,
+    },
 }
 
 const breadcrumbs = [

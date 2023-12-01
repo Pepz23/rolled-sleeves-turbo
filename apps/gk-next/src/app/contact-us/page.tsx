@@ -5,6 +5,13 @@ import ContactForm from 'components/form/ContactForm'
 
 export const metadata = {
     title: 'Contact Us | Garrett Kitchens',
+    description:
+        'We are an independent kitchen studio who design, supply & install inspiring kitchens and other built in furniture. With a passion for quality, design, and craftsmanship, we are dedicated to helping you create a unique kitchen design that is perfect for your space.',
+    openGraph: {
+        title: 'Contact Us | Garrett Kitchens',
+        description:
+            'We are an independent kitchen studio who design, supply & install inspiring kitchens and other built in furniture. With a passion for quality, design, and craftsmanship, we are dedicated to helping you create a unique kitchen design that is perfect for your space.',
+    },
 }
 
 export default function Page() {

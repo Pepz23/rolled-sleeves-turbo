@@ -1,3 +1,4 @@
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ProjectContent from 'components/projects/ProjectContent'
 import ProjectStoreInitializer from 'components/util/ProjectStoreInitializer'
@@ -8,7 +9,19 @@ export async function generateMetadata({ params }) {
 
     return {
         title: `${project.fields.name} | Garrett Kitchens`,
-        description: project.fields.shortDescription,
+        description: documentToPlainTextString(project.fields.shortDescription as any),
+        openGraph: {
+            title: `${project.fields.name} | Garrett Kitchens`,
+            description: documentToPlainTextString(project.fields.shortDescription as any),
+            images: [
+                {
+                    url: project.fields.images?.[0]?.fields?.file?.url,
+                    width: project.fields.images?.[0]?.fields?.file?.details?.image?.width,
+                    height: project.fields.images?.[0]?.fields?.file?.details?.image?.height,
+                    alt: project.fields.images?.[0]?.fields?.description,
+                },
+            ],
+        },
     }
 }
 

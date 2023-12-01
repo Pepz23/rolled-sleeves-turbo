@@ -6,6 +6,19 @@ import { getAllKitchens } from 'utils/contentful/client'
 
 export const metadata = {
     title: 'Modern Kitchens | Garrett Kitchens',
+    description: `Our modern kitchen collection features a range of handleless kitchens, as
+    well as handled kitchens for those who want beautiful handles to be seen.
+    Whether you’re looking for an industrial aesthetic or more minimalist
+    styling, our kitchen ranges combined with our experienced designers can
+    bring your ideas to life.`,
+    openGraph: {
+        title: 'Modern Kitchens | Garrett Kitchens',
+        description: `Our modern kitchen collection features a range of handleless kitchens, as
+        well as handled kitchens for those who want beautiful handles to be seen.
+        Whether you’re looking for an industrial aesthetic or more minimalist
+        styling, our kitchen ranges combined with our experienced designers can
+        bring your ideas to life.`,
+    },
 }
 
 const breadcrumbs = [
