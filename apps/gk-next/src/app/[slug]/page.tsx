@@ -1,3 +1,5 @@
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+
 import PageContent from 'components/page/PageContent'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import PageStoreInitializer from 'components/util/PageStoreInitializer'
@@ -8,7 +10,7 @@ export async function generateMetadata({ params }) {
 
     return {
         title: `${page.fields.title} | Garrett Kitchens`,
-        description: page.fields.shortText,
+        description: documentToPlainTextString(page.fields.shortText as any),
         robots: {
             index: page.fields.shouldGoogleIndex,
             follow: page.fields.shouldGoogleIndex,
@@ -16,6 +18,18 @@ export async function generateMetadata({ params }) {
                 index: page.fields.shouldGoogleIndex,
                 follow: page.fields.shouldGoogleIndex,
             },
+        },
+        openGraph: {
+            title: `${page.fields.title} | Garrett Kitchens`,
+            description: documentToPlainTextString(page.fields.shortText as any),
+            images: [
+                {
+                    url: page.fields.images?.[0]?.fields?.file?.url,
+                    width: page.fields.images?.[0]?.fields?.file?.details?.image?.width,
+                    height: page.fields.images?.[0]?.fields?.file?.details?.image?.height,
+                    alt: page.fields.images?.[0]?.fields?.description,
+                },
+            ],
         },
     }
 }

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import { useScroll } from 'framer-motion'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { PhoneIcon } from '@heroicons/react/24/solid'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 import { classNames } from 'utils/tailwind/classNames'
@@ -201,9 +202,12 @@ export default function Header() {
                         Our Work
                     </a>
                 </Popover.Group>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-x-4">
                     <ButtonLink href="/book-a-free-survey">
-                        Book a Free Survey<span aria-hidden="true">&rarr;</span>
+                        Book a Free Survey<span aria-hidden="true"> &rarr;</span>
+                    </ButtonLink>
+                    <ButtonLink href="tel:02086190004" className="flex items-center justify-center">
+                        <PhoneIcon className="block w-4 h-4 text-white" />
                     </ButtonLink>
                 </div>
             </nav>
@@ -300,9 +304,15 @@ export default function Header() {
                                     Our Work
                                 </a>
                             </div>
-                            <div className="py-6">
+                            <div className="flex items-center py-6 gap-x-4">
                                 <ButtonLink href="/book-a-free-survey">
                                     Book a Free Survey <span aria-hidden="true">&rarr;</span>
+                                </ButtonLink>
+                                <ButtonLink
+                                    href="tel:02086190004"
+                                    className="flex items-center justify-center"
+                                >
+                                    <PhoneIcon className="block w-4 h-4 text-white" />
                                 </ButtonLink>
                             </div>
                         </div>
