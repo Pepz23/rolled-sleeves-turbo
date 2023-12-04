@@ -132,7 +132,7 @@ export default function Header() {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                         >
-                            <Popover.Panel className="absolute z-10 w-screen max-w-sm mt-3 overflow-hidden bg-white shadow-lg -left-8 top-full rounded-3xl ring-1 ring-gray-900/5">
+                            <Popover.Panel className="absolute z-50 w-screen max-w-sm mt-3 overflow-hidden bg-white shadow-lg -left-8 top-full rounded-3xl ring-1 ring-gray-900/5">
                                 <div className="p-4">
                                     {kitchens.map((item) => (
                                         <div
@@ -173,7 +173,7 @@ export default function Header() {
                             leaveFrom="opacity-100 translate-y-0"
                             leaveTo="opacity-0 translate-y-1"
                         >
-                            <Popover.Panel className="absolute z-10 w-screen max-w-sm mt-3 overflow-hidden bg-white shadow-lg -left-8 top-full rounded-3xl ring-1 ring-gray-900/5">
+                            <Popover.Panel className="absolute z-50 w-screen max-w-sm mt-3 overflow-hidden bg-white shadow-lg -left-8 top-full rounded-3xl ring-1 ring-gray-900/5">
                                 <div className="p-4">
                                     {about.map((item) => (
                                         <div
@@ -206,9 +206,12 @@ export default function Header() {
                     <ButtonLink href="/book-a-free-survey">
                         Book a Free Survey<span aria-hidden="true"> &rarr;</span>
                     </ButtonLink>
-                    <ButtonLink href="tel:02086190004" className="flex items-center justify-center">
+                    <a
+                        href="tel:02086190004"
+                        className="flex items-center justify-center px-6 py-3 bg-brand-primary"
+                    >
                         <PhoneIcon className="block w-4 h-4 text-white" />
-                    </ButtonLink>
+                    </a>
                 </div>
             </nav>
             <Dialog
@@ -217,8 +220,8 @@ export default function Header() {
                 open={mobileMenuOpen}
                 onClose={setMobileMenuOpen}
             >
-                <div className="fixed inset-0 z-10" />
-                <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full p-4 overflow-y-auto bg-white md:p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div className="fixed inset-0 z-50" />
+                <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full p-4 overflow-y-auto bg-white md:p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                     <div className="flex items-center justify-between">
                         <a href="/" className="-m-1.5 p-1.5">
                             <span className="sr-only">Garrett Kitchens</span>
@@ -308,12 +311,12 @@ export default function Header() {
                                 <ButtonLink href="/book-a-free-survey">
                                     Book a Free Survey <span aria-hidden="true">&rarr;</span>
                                 </ButtonLink>
-                                <ButtonLink
+                                <a
                                     href="tel:02086190004"
-                                    className="flex items-center justify-center"
+                                    className="flex items-center justify-center px-6 py-3 bg-brand-primary"
                                 >
                                     <PhoneIcon className="block w-4 h-4 text-white" />
-                                </ButtonLink>
+                                </a>
                             </div>
                         </div>
                     </div>
