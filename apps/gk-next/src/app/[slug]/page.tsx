@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 
 import PageContent from 'components/page/PageContent'
@@ -7,6 +8,8 @@ import { getAllPages, getPageBySlug } from 'utils/contentful/client'
 
 export async function generateMetadata({ params }) {
     const page = await getPageBySlug(params.slug)
+
+    if (!page) return
 
     return {
         title: `${page.fields.title} | Garrett Kitchens`,
@@ -39,6 +42,8 @@ const breadcrumbs = [{ id: 1, name: 'Home', href: '/' }]
 export default async function Page({ params }: { params: { slug: string } }) {
     const page = await getPageBySlug(params.slug)
     const pages = await getAllPages()
+
+    if (!page) notFound()
 
     return (
         <>

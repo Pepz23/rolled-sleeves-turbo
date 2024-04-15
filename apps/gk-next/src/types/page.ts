@@ -7,6 +7,7 @@ export interface PageFields {
     shortText: EntryFields.RichText
     text: EntryFields.RichText
     images: Asset[]
+    showKitchenRangesBelowContent: EntryFields.Boolean
 }
 
 export type Page = Entry<PageFields>

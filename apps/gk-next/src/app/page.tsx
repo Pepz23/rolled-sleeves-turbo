@@ -7,6 +7,7 @@ import { TestimonialCarousel } from 'components/carousel/TestimonialCarousel'
 import CTASection from 'components/cta/CTASection'
 import USPBar from 'components/usp-bar/USPBar'
 import HeroCarousel from 'components/carousel/HeroCarousel'
+import KitchenStyles from 'components/kitchen-styles/KitchenStyles'
 
 const testimonials = [
     {
@@ -227,59 +228,7 @@ export default function Page() {
                 ]}
             />
 
-            <section className="w-full bg-gray-100 py-sm lg:py-lg">
-                <div
-                    aria-labelledby="collection-heading"
-                    className="max-w-4xl px-4 mx-auto md:px-6 lg:max-w-7xl lg:px-8"
-                >
-                    <div className="flex flex-col justify-between md:items-end md:flex-row">
-                        <div className="md:w-3/5">
-                            <h4 className="text-sm font-semibold tracking-widest uppercase text-brand-secondary">
-                                Our Kitchen Styles
-                            </h4>
-
-                            <p className="mt-2 text-base text-gray-500">
-                                Choose between our modern, traditional, handeless or in-frame
-                                kitchens to find a style that perfectly suits your aesthetic.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="mt-4 space-y-4 lg:mt-10 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-2 lg:gap-3 sm:space-y-0">
-                        {kitchens.map((kitchen) => (
-                            <Link
-                                key={kitchen.name}
-                                href={kitchen.href}
-                                className="relative block text-center border border-gray-400 group"
-                            >
-                                <div className="absolute z-10 w-full h-full bg-black opacity-40"></div>
-
-                                <div
-                                    aria-hidden="true"
-                                    className="relative flex items-center justify-center overflow-hidden h-96"
-                                >
-                                    <Image
-                                        fill
-                                        src={kitchen.imageSrc}
-                                        alt={kitchen.imageAlt}
-                                        className="object-cover object-center"
-                                    />
-
-                                    <h2 className="absolute z-40 px-6 mx-auto text-3xl text-white hover:text-white">
-                                        {kitchen.name}
-                                    </h2>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-
-                    <div className="flex justify-center mt-8">
-                        <ButtonLink href="/kitchen-ranges" className="w-fit">
-                            View All Kitchens <span aria-hidden="true">&rarr;</span>
-                        </ButtonLink>
-                    </div>
-                </div>
-            </section>
+            <KitchenStyles />
 
             <section className="bg-brand-primaryBg py-sm lg:py-10">
                 <div className="px-6 mx-auto max-w-7xl lg:px-8">

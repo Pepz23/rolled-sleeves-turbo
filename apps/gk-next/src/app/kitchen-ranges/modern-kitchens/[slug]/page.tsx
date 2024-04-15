@@ -1,4 +1,6 @@
+import { notFound } from 'next/navigation'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import KitchenContent from 'components/kitchen-ranges/KitchenContent'
 import KitchenStoreInitializer from 'components/util/KitchenStoreInitializer'
@@ -6,6 +8,8 @@ import { getAllKitchens, getKitchenBySlug } from 'utils/contentful/client'
 
 export async function generateMetadata({ params }) {
     const kitchen = await getKitchenBySlug(params.slug)
+
+    if (!kitchen) return
 
     return {
         title: `${kitchen.fields.name} | Garrett Kitchens`,
@@ -34,6 +38,8 @@ const breadcrumbs = [
 export default async function Page({ params }: { params: { slug: string } }) {
     const kitchen = await getKitchenBySlug(params.slug)
     const kitchens = await getAllKitchens()
+
+    if (!kitchen) return notFound()
 
     return (
         <>

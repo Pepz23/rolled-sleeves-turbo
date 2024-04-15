@@ -1,4 +1,6 @@
+import { notFound } from 'next/navigation'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import ProjectContent from 'components/projects/ProjectContent'
 import ProjectStoreInitializer from 'components/util/ProjectStoreInitializer'
@@ -6,6 +8,8 @@ import { getAllProjects, getProjectBySlug } from 'utils/contentful/client'
 
 export async function generateMetadata({ params }) {
     const project = await getProjectBySlug(params.slug)
+
+    if (!project) return
 
     return {
         title: `${project.fields.name} | Garrett Kitchens`,
@@ -33,6 +37,8 @@ const breadcrumbs = [
 export default async function Page({ params }: { params: { slug: string } }) {
     const project = await getProjectBySlug(params.slug)
     const projects = await getAllProjects()
+
+    if (!project) return notFound()
 
     return (
         <>

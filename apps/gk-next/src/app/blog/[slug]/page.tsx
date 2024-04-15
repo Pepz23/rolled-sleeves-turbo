@@ -1,4 +1,6 @@
+import { notFound } from 'next/navigation'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+
 import BlogPost from 'components/blog/BlogPost'
 import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import PostStoreInitializer from 'components/util/PostStoreInitializer'
@@ -6,6 +8,8 @@ import { getAllPosts, getPostBySlug } from 'utils/contentful/client'
 
 export async function generateMetadata({ params }) {
     const post = await getPostBySlug(params.slug)
+
+    if (!post) return
 
     return {
         title: `${post.fields.title} | Garrett Kitchens`,
@@ -33,6 +37,8 @@ const breadcrumbs = [
 export default async function Page({ params }: { params: { slug: string } }) {
     const post = await getPostBySlug(params.slug)
     const posts = await getAllPosts()
+
+    if (!post) notFound()
 
     return (
         <>
