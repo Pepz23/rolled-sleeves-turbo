@@ -28,24 +28,24 @@ export default function TextImgSection(props: TextImgSectionProps) {
 
     return (
         <section className={twMerge('', className, whiteBg ? 'bg-white' : 'bg-gray-100')}>
-            <div className="mx-auto overflow-hidden py-sm md:max-w-7xl px-4 md:px-8 lg:py-lg">
+            <div className="px-4 mx-auto overflow-hidden py-sm md:max-w-7xl md:px-8 lg:py-lg">
                 <div
-                    className={`flex flex-col justify-between h-[30rem] md:h-[25rem] lg:h-[30rem] gap-4  md:gap-6 lg:gap-x-12 w-full ${
+                    className={`flex flex-col justify-between h-[30rem] md:h-[25rem] lg:h-[30rem] gap-4 md:gap-6 lg:gap-x-12 w-full ${
                         flipped ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                 >
-                    <div className="w-full h-full relative md:w-1/2">
+                    <div className="relative w-full h-full md:w-1/2">
                         <Image
                             fill
                             src={image}
                             alt={alt}
-                            className="w-full h-full object-cover object-center"
+                            className="object-cover object-center w-full h-full"
                         />
                     </div>
 
-                    <div className="relative flex flex-col w-full md:w-1/2 justify-center">
+                    <div className="relative flex flex-col justify-center w-full md:w-1/2">
                         {subTitle && (
-                            <h4 className="text-sm font-semibold uppercase tracking-widest text-brand-secondary">
+                            <h4 className="text-sm font-semibold tracking-widest uppercase text-brand-secondary">
                                 Inspired Designs
                             </h4>
                         )}
@@ -54,7 +54,7 @@ export default function TextImgSection(props: TextImgSectionProps) {
                             {title}
                         </h1>
 
-                        <p className="mt-4 text-md text-gray-500">{description}</p>
+                        <p className="mt-4 text-gray-500 text-md">{description}</p>
                     </div>
                 </div>
 
