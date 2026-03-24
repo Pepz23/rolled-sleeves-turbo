@@ -39,25 +39,15 @@ export default function Page() {
 
                 <p className="mb-2 text-md">
                     The business will arrange a convenient date to come and view and/or remedy the
-                    situation.{' '}
+                    situation. {' '}
                 </p>
 
                 <p className="mb-2 text-md">
-                    In the unlikely event the business is unable to resolve your complaint having
-                    exhausted the business complaints procedure, it may be necessary to use another
-                    complaint service. Where the business cannot resolve the complaint to your
-                    satisfaction and/or agree to the final resolution requests confirmed to us; and
-                    both parties agree a ‘deadlock’ has been reached, you can then escalate your
-                    complaint.
+                    Most complaints or issues can be quickly and easily resolved.  
                 </p>
 
                 <p className="mb-2 text-md">
-                    The business has access to an Ombudsman service for our domestic contracts for
-                    installation, service, repair and maintenance as part of the Which? Trusted
-                    Traders Endorsement. If you choose to you can refer your complaint to the
-                    Dispute Resolution Ombudsman. Before the Dispute Resolution Ombudsman can deal
-                    with your complaint you will need to contact Which? Trusted Traders on 0117 456
-                    6031 who can explain if you are eligible to use the Ombudsman’s services.
+                 .
                 </p>
             </section>
         </>
