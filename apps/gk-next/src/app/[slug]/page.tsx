@@ -5,6 +5,16 @@ import Breadcrumbs from 'components/breadcrumbs/Breadcrumbs'
 import PageStoreInitializer from 'components/util/PageStoreInitializer'
 import { getAllPages, getPageBySlug } from 'utils/contentful/client'
 
+// Enable ISR with 24-hour revalidation
+export const revalidate = 86400
+
+export async function generateStaticParams() {
+    const pages = await getAllPages()
+    return pages.map((page: any) => ({
+        slug: page.fields.slug,
+    }))
+}
+
 export async function generateMetadata({ params }) {
     const page = await getPageBySlug(params.slug)
 
